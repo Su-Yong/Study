@@ -1,0 +1,64 @@
+doctype html
+html(lang=ko)
+  head
+    title
+      | Study에 회원가입
+    meta(name="google-signin-client_id" content="883812000346-sednv1fk1n1kru5blstt506uqbcfo166.apps.googleusercontent.com")
+    meta(name="google-signin-scope" content="profile email")
+    script(src="https://apis.google.com/js/platform.js") async defer
+    script(src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js")
+    script(src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js")
+    script(src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js")
+    script(src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js")
+    script(src="https://www.gstatic.com/firebasejs/3.6.2/firebase-messaging.js")
+
+    include setup.pug
+    style
+      include ../static/register.css
+    script
+      include ../script/register.js
+  body
+    include header.pug
+    div.mdl-layout.mdl-js-layout
+      +toolbar("회원가입")
+      main.mdl-layout__content.mdl-grid(style="margin: 16px;")
+        div.mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-offset
+          div.mdl-card__title
+            h2.mdl-card__title-text
+              | 회원가입
+          div.mdl-card__supporting-text
+            form(action="#")
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                input#id-box.mdl-textfield__input(type="text")
+                label.mdl-textfield__label(for="id-box")
+                  | 아이디
+            form(action="#")
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                input#password-box.mdl-textfield__input(type="text")
+                label.mdl-textfield__label(for="id-box")
+                  | 비밀번호
+            div.mdl-grid
+              div#grade-dropdown.mdl-cell.mdl-cell--4-col
+                div#grade-button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored
+                  | 학년
+                ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for="grade-button")
+                  li.mdl-menu__item(onclick="selectGrade(1);") 1학년
+                  li.mdl-menu__item(onclick="selectGrade(2);") 2학년
+                  li.mdl-menu__item(onclick="selectGrade(3);") 3학년
+              div#class-dropdown.mdl-cell.mdl-cell--4-col
+                div#class-button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored
+                  | 반
+                ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for="class-button")
+                  li.mdl-menu__item(onclick="selectClass(1);") 1반
+                  li.mdl-menu__item(onclick="selectClass(2);") 2반
+                  li.mdl-menu__item(onclick="selectClass(3);") 3반
+                  li.mdl-menu__item(onclick="selectClass(4);") 4반
+                  li.mdl-menu__item(onclick="selectClass(5);") 5반
+                  li.mdl-menu__item(onclick="selectClass(6);") 6반
+                  li.mdl-menu__item(onclick="selectClass(7);") 7반
+                  li.mdl-menu__item(onclick="selectClass(8);") 8반
+                  li.mdl-menu__item(onclick="selectClass(9);") 9반
+            div.g-signin2(data-onsuccess="onSignIn" data-theme="white")
+          div.mdl-card__actions.mdl-card--border
+            a.mdl-button.mdl-js-button.mdl-button--colored.mdl-js-ripple-effect
+              | 회원가입

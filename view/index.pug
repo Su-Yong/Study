@@ -1,0 +1,22 @@
+doctype html
+html(lang=ko)
+  head
+    title= Title
+    meta(name="google-signin-client_id" content="883812000346-sednv1fk1n1kru5blstt506uqbcfo166.apps.googleusercontent.com")
+    meta(name="google-signin-scope" content="profile email")
+    script(src="https://apis.google.com/js/platform.js") async defer
+
+    include setup.pug
+    style
+      include ../static/style.css
+    script
+      include ../script/login.js
+  body
+    include header.pug
+    div.mdl-layout.mdl-js-layout
+      +toolbar("타이틀")
+      main.mdl-layout__content(style="margin: 16px;")
+        button.mdl-button.mdl-js-button.mdl-button--raised(onclick="onSignOut();")
+          | Logout
+        a.mdl-button.mdl-js-button.mdl-button--raised(href="./register")
+          | Register
