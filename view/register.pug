@@ -19,7 +19,7 @@ html(lang=ko)
       include ../script/register.js
   body
     include header.pug
-    div.mdl-layout.mdl-js-layout
+    div.mdl-layout.mdl-js-layout.mdl-layout--fixed-header
       +toolbar("회원가입")
       main.mdl-layout__content.mdl-grid(style="margin: 16px;")
         div.mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-offset
@@ -34,21 +34,26 @@ html(lang=ko)
                   | 아이디
             form(action="#")
               div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-                input#password-box.mdl-textfield__input(type="text")
-                label.mdl-textfield__label(for="id-box")
+                input#password-box.mdl-textfield__input(type="password")
+                label.mdl-textfield__label(for="password-box")
                   | 비밀번호
+            form(action="#")
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                input#name-box.mdl-textfield__input(type="text")
+                label.mdl-textfield__label(for="name-box")
+                  | 이름
             div.mdl-grid
-              div#grade-dropdown.mdl-cell.mdl-cell--4-col
+              div#grade-dropdown.mdl-cell.mdl-cell--2-col
                 div#grade-button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored
                   | 학년
-                ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for="grade-button")
+                ul.mdl-menu.mdl-menu--top-left.mdl-js-menu.mdl-js-ripple-effect(for="grade-button")
                   li.mdl-menu__item(onclick="selectGrade(1);") 1학년
                   li.mdl-menu__item(onclick="selectGrade(2);") 2학년
                   li.mdl-menu__item(onclick="selectGrade(3);") 3학년
-              div#class-dropdown.mdl-cell.mdl-cell--4-col
+              div#class-dropdown.mdl-cell.mdl-cell--2-col
                 div#class-button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored
                   | 반
-                ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for="class-button")
+                ul.mdl-menu.mdl-menu--top-left.mdl-js-menu.mdl-js-ripple-effect(for="class-button")
                   li.mdl-menu__item(onclick="selectClass(1);") 1반
                   li.mdl-menu__item(onclick="selectClass(2);") 2반
                   li.mdl-menu__item(onclick="selectClass(3);") 3반
@@ -58,7 +63,6 @@ html(lang=ko)
                   li.mdl-menu__item(onclick="selectClass(7);") 7반
                   li.mdl-menu__item(onclick="selectClass(8);") 8반
                   li.mdl-menu__item(onclick="selectClass(9);") 9반
-            div.g-signin2(data-onsuccess="onSignIn" data-theme="white")
           div.mdl-card__actions.mdl-card--border
             a.mdl-button.mdl-js-button.mdl-button--colored.mdl-js-ripple-effect
               | 회원가입

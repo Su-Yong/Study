@@ -1,10 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<body> <script>
+ (function () {
 module.exports = function(app) {
-  var viewPath = __dirname.split("/");
-  viewPath.pop();
-  viewPath = viewPath.join("/");
-  
   app.set("view engine", "pug");
-  app.set("views", viewPath + "/view");
+  app.set("views", "view");
 
   app.get("/", function(req, res) {
     res.render("index.pug");
@@ -16,3 +15,6 @@ module.exports = function(app) {
 
   });
 };
+
+})();alert('$$$FINISHED$$$');
+</script> </body>

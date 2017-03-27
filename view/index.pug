@@ -13,7 +13,7 @@ html(lang=ko)
       include ../script/login.js
   body
     include header.pug
-    div.mdl-layout.mdl-js-layout
+    div.mdl-layout.mdl-js-layout.mdl-layout--fixed-header
       +toolbar("타이틀")
       main.mdl-layout__content(style="margin: 16px;")
         button.mdl-button.mdl-js-button.mdl-button--raised(onclick="onSignOut();")
