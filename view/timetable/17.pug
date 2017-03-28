@@ -1,0 +1,67 @@
+include shape.pug
+mixin table17(a, b, c)
+  table.mdl-data-table.mdl-js-data-table
+    thead
+      tr
+        th 1-7
+        th 월
+        th 화
+        th 수
+        th 목
+        th 금
+      tr
+        th 1
+        +shape("자율", "박지화")
+        +shape("체육", "권성학")
+        +shape("논술", "최정규")
+        +shape-move("영어", "이동")
+        +shape("영어", "이명제")
+      tr
+        th 2
+        +shape-move("국어", "이동")
+        +shape-move("수학", "이동")
+        +shape("체육", "권성학")
+        +shape("사회", "송두원")
+        +shape-move("영어", "이동")
+      tr
+        th 3
+        +shape-move("영어", "이동")
+        +shape("지구과학", "김지효")
+        +shape("논술", "이기영")
+        +shape("진로", "박지화")
+        +shape-move("수학", "이동")
+      tr
+        th 4
+        +shape("한국사", "전종범")
+        +shape-move("영어", "이동")
+        +shape-move("국어", "이동")
+        +shape-move("국어", "이동")
+        +shape("한문", "황화동")
+      tr
+        th 5
+        +shape("음악", "이환용")
+        +shape("한문", "김한송")
+        +shape("한국사", "전종범")
+        +shape("미술", "이재희")
+        +shape-move("국어", "이동")
+      tr
+        th 6
+        +shape-move("수학", "이동")
+        +shape("미술", "박지화")
+        +shape-move("국어", "이동")
+        +shape-move("수학", "이동")
+        +shape("음악", "이환용")
+      tr
+        th 7
+        +shape("한문", "김한송")
+        +shape("자율", "도서관")
+        +shape-move("동아리", "일반")
+        +shape("지구과학", "김지효")
+        +shape-move(b, "방")
+      tr
+        th 8
+        +shape-move(a, "방")
+        +shape-move(b, "방")
+        +shape-move(c, "방")
+        +shape-move(a, "방")
+        +shape-move(c, "방")

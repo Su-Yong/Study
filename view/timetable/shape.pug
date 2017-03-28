@@ -1,0 +1,9 @@
+mixin shape(title, teacher)
+  td.mdl-data-table__cell--non-numeric
+    div= title
+    span= teacher
+
+mixin shape-move(title, move)
+  td.mdl-data-table__cell--non-numeric
+    span.mdl-badge(data-badge=move)= title
+    

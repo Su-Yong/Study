@@ -13,6 +13,7 @@ html(lang=ko)
       include ../script/login.js
   body
     include header.pug
+    include timetable/17.pug
     div.mdl-layout.mdl-js-layout.mdl-layout--fixed-header
       +toolbar("타이틀")
       main.mdl-layout__content(style="margin: 16px;")
@@ -20,3 +21,4 @@ html(lang=ko)
           | Logout
         a.mdl-button.mdl-js-button.mdl-button--raised(href="./register")
           | Register
+        +table17("A수업", "B수업", "C수업")
