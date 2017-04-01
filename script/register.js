@@ -1,24 +1,5 @@
-/*var config = {
-  apiKey: "AIzaSyAc12ER6ul_cMhGWgfPqAqHtKFgre0_ufs",
-  authDomain: "jungang-login.firebaseapp.com",
-  databaseURL: "https://jungang-login.firebaseio.com",
-  storageBucket: "jungang-login.appspot.com",
-  messagingSenderId: "883812000346"
-};
-var app = firebase.initializeApp(config);
+var account = require("./account.js");
 
-var storage = firebase.storage();
-var storageRef = storage.ref();
-
-var database = app.database();
-
-function dataUpload(student) {
-  var data
-  ref.putString(data, "base46").then(function(snapshot) {
-    alert("register!");
-  });
-}
-*/
 var student = {
   grade: 0,
   class: 0,
@@ -27,6 +8,7 @@ var student = {
 
 var gradeButton;
 var classButton;
+var registerButton;
 
 function selectGrade(grade) {
   student.grade = grade;
@@ -54,4 +36,11 @@ window.onload = init;
 function init() {
   gradeButton = document.getElementById("grade-button");
   classButton = document.getElementById("class-button");
+  registerButton = document.getElementById("register-button");
+  
+  registerButton.onclick = function() {
+    /*account.register("id", "password", 1, 7, "테스트", function() {
+	  alert("회원가입 성공!");
+	});*/
+  };
 }
