@@ -7,18 +7,14 @@ html(lang=ko)
     script(src="https://apis.google.com/js/platform.js") async defer
 
     include setup.pug
-    style
-      include ../static/style.css
-    script
-      include ../script/login.js
+    link(rel="stylesheet" href="./static/style.css")
   body
     include header.pug
     include timetable/17.pug
     div.mdl-layout.mdl-js-layout.mdl-layout--fixed-header
       +toolbar("타이틀")
       main.mdl-layout__content(style="margin: 16px;")
-        button.mdl-button.mdl-js-button.mdl-button--raised(onclick="onSignOut();")
-          | Logout
-        a.mdl-button.mdl-js-button.mdl-button--raised(href="./register")
-          | Register
         +table17("A수업", "B수업", "C수업")
+      div#snackbar.mdl-snackbar.mdl-js-snackbar
+        div.mdl-snackbar__text
+        button.mdl-snackbar__action(type="button")

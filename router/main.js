@@ -1,10 +1,10 @@
 module.exports = function(app) {
-  var viewPath = __dirname.split("/");
-  viewPath.pop();
-  viewPath = viewPath.join("/");
-  
+  var express = require("express");
+
   app.set("view engine", "pug");
-  app.set("views", viewPath + "/view");
+  app.set("views", "./view");
+
+  app.use(express.static("public"));
 
   app.get("/", function(req, res) {
     res.render("index.pug");

@@ -1,10 +1,11 @@
 mixin toolbar(title)
-  header.mdl-layout__header.mdl-layout--fixed-drawer
+  script(type="text/javascript" src="./script/header.js")
+  header.mdl-layout__header.mdl-layout__header--transparent(style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));")
     div.mdl-layout__header-row
       span.mdl-layout-title= title
       div.mdl-layout-spacer
-      div.mdl-chip.mdl-chip--contact
-        img#profile-image.mdl-chip__contact/
+      button#user-chip.mdl-chip.mdl-chip--contact
+        img#profile-image.mdl-chip__contact.mdl-color--teal(src="https://firebasestorage.googleapis.com/v0/b/study-e121b.appspot.com/o/ic_person_white_48dp_1x.png?alt=media&token=92f358bc-4a11-40bd-8759-1aab45c8e875")/
         span#profile-name.mdl-chip__text Guest
       div.mdl-button.mdl-js-button.mdl-button--icon
         div.material-icons notifications

@@ -6,23 +6,16 @@ html(lang=ko)
     meta(name="google-signin-client_id" content="883812000346-sednv1fk1n1kru5blstt506uqbcfo166.apps.googleusercontent.com")
     meta(name="google-signin-scope" content="profile email")
     script(src="https://apis.google.com/js/platform.js") async defer
-    script(src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js")
-    script(src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js")
-    script(src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js")
-    script(src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js")
-    script(src="https://www.gstatic.com/firebasejs/3.6.2/firebase-messaging.js")
 
     include setup.pug
-    style
-      include ../static/register.css
-    script
-      include ../script/register.js
+    link(rel="stylesheet" href="./static/register.css")
+    script(type="text/javascript" src="./script/register.js")
   body
     include header.pug
     div.mdl-layout.mdl-js-layout.mdl-layout--fixed-header
       +toolbar("회원가입")
       main.mdl-layout__content.mdl-grid(style="margin: 16px;")
-        div.mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-offset
+        div.mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-offset(style="width: auto; height: 60%;")
           div.mdl-card__title
             h2.mdl-card__title-text
               | 회원가입
@@ -31,7 +24,7 @@ html(lang=ko)
               div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                 input#id-box.mdl-textfield__input(type="text")
                 label.mdl-textfield__label(for="id-box")
-                  | 아이디
+                  | 이메일 주소
             form(action="#")
               div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                 input#password-box.mdl-textfield__input(type="password")
@@ -43,14 +36,14 @@ html(lang=ko)
                 label.mdl-textfield__label(for="name-box")
                   | 이름
             div.mdl-grid
-              div#grade-dropdown.mdl-cell.mdl-cell--2-col
+              div#grade-dropdown.mdl-cell.mdl-cell--4-col.mdl-cell--2-col-phone
                 div#grade-button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored
                   | 학년
                 ul.mdl-menu.mdl-menu--top-left.mdl-js-menu.mdl-js-ripple-effect(for="grade-button")
                   li.mdl-menu__item(onclick="selectGrade(1);") 1학년
                   li.mdl-menu__item(onclick="selectGrade(2);") 2학년
                   li.mdl-menu__item(onclick="selectGrade(3);") 3학년
-              div#class-dropdown.mdl-cell.mdl-cell--2-col
+              div#class-dropdown.mdl-cell.mdl-cell--4-col.mdl-cell--2-col-phone
                 div#class-button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored
                   | 반
                 ul.mdl-menu.mdl-menu--top-left.mdl-js-menu.mdl-js-ripple-effect(for="class-button")
@@ -66,3 +59,6 @@ html(lang=ko)
           div.mdl-card__actions.mdl-card--border
             a#register-button.mdl-button.mdl-js-button.mdl-button--colored.mdl-js-ripple-effect
               | 회원가입
+        div#snackbar.mdl-snackbar.mdl-js-snackbar
+          div.mdl-snackbar__text
+          button.mdl-snackbar__action(type="button")
