@@ -1,11 +1,21 @@
 module.exports = function(app) {
   var express = require("express");
-
+  
   app.set("view engine", "pug");
-  app.set("views", "./view");
+  // When I develop it with mobile phone
+  var path = __dirname.split("/");
+  path.pop();
+  path = path.join("/");
+  
+  app.set("views", path + "/view");
 
-  app.use(express.static("public"));
+  app.use("", express.static(path + "/public"));
+  
+  // PC
+  /*app.set("views", "view");
 
+  app.use("", express.static("public"));*/
+  
   app.get("/", function(req, res) {
     res.render("index.pug");
   });

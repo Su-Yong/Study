@@ -6,9 +6,10 @@ mixin toolbar(title)
       div.mdl-layout-spacer
       button#user-chip.mdl-chip.mdl-chip--contact
         img#profile-image.mdl-chip__contact.mdl-color--teal(src="https://firebasestorage.googleapis.com/v0/b/study-e121b.appspot.com/o/ic_person_white_48dp_1x.png?alt=media&token=92f358bc-4a11-40bd-8759-1aab45c8e875")/
-        span#profile-name.mdl-chip__text Guest
-      div.mdl-button.mdl-js-button.mdl-button--icon
-        div.material-icons notifications
+        span#profile-name.mdl-chip__text 로그인
+      div#notifi-button.mdl-button.mdl-js-button.mdl-button--icon
+        div#notifi-icon.material-icons notifications
+      ul#notifi-panel.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="notifi-icon")
       div.mdl-button.mdl-js-button.mdl-button--icon
         div.material-icons settings
   nav.mdl-layout__drawer

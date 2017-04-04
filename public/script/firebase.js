@@ -25,6 +25,14 @@ Server.addNewUser = function(email, password, func) {
   });
 };
 
+Server.verifyUser = function(func) {
+  firebase.auth().currentUser.sendEmailVerification().then(function() {
+    func(Server.SUCCESS);
+  }, function(error) {
+    func(Server.FAILED, error);
+  });
+};
+
 Server.getUser = function() {
   return firebase.auth().currentUser;
 };
